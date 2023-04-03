@@ -1,37 +1,17 @@
 # Phase 2 Project
 
-Another module down--you're almost half way there!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-2-project-campus/master/halfway-there.gif)
-
-All that remains in Phase 2 is to put our newfound data science skills to use with a large project! This project should take 20 to 30 hours to complete.
-
 ## Project Overview
 
 For this project, you will use regression modeling to analyze house sales in a northwestern county.
 
 ### The Data
 
-This project uses the King County House Sales dataset, which can be found in  `kc_house_data.csv` in the data folder in this repo. The description of the column names can be found in `column_names.md` in the same folder. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions about what the data means.
-
-It is up to you to decide what data from this dataset to use and how to use it. If you are feeling overwhelmed or behind, we recommend you ignore some or all of the following features:
-
-* date
-* view
-* sqft_above
-* sqft_basement
-* yr_renovated
-* zipcode
-* lat
-* long
-* sqft_living15
-* sqft_lot15
+This project makes use of the King County House Sales dataset, which is available in the data folder of this repository as kc house data.csv. Column names.md, which is located in the same folder, has a description of the column names. Like most real-world data sets, the column names are not completely described, so if you have any questions about what the data means, you'll need to do some research or use your best judgment.
 
 ### Business Problem
 
-It is up to you to define a stakeholder and business problem appropriate to this dataset.
-
-If you are struggling to define a stakeholder, we recommend you complete a project for a real estate agency that helps homeowners buy and/or sell homes. A business problem you could focus on for this stakeholder is the need to provide advice to homeowners about how home renovations might increase the estimated value of their homes, and by what amount.
+ I want to create a model with these data that will allow me to forecast the price of a house using the characteristics of the data about the house. We can help both the seller find their business in this situation. The model can be used by the seller to estimate the selling price of their home and determine whether any renovations are necessary before they can sell it. Based on their budget, the buyer may receive some recommendations for the type of home they can afford.
+ 
 
 ## Deliverables
 
@@ -45,22 +25,21 @@ Review the "Project Submission & Review" page in the "Milestones Instructions" t
 
 ### Key Points
 
-* **Your deliverables should explicitly address each step of the data science process.** Refer to [the Data Science Process lesson](https://github.com/learn-co-curriculum/dsc-data-science-processes) from Topic 19 for more information about process models you can use.
+To the point of goal:
 
-* **Your Jupyter Notebook should demonstrate an iterative approach to modeling.** This means that you begin with a basic model, evaluate it, and then provide justification for and proceed to a new model. After you finish refining your models, you should provide 1-3 paragraphs discussing your final model - this should include interpreting at least 3 important parameter estimates or statistics.
+Remove information from the pricing that has no meaning or is null.
+Remove any features that don't increase the value of the home.
+Delete any null values
+Using scatter plots and qqplots, see if there are any highly connected characteristics that may be deleted.
+construct the model of linear regression.
+analyze how the features can affect the price of the house
 
-* **Based on the results of your models, your notebook and presentation should discuss at least two features that have strong relationships with housing prices.**
+I polished most of the columns that didn't add to the cost of the home and removed them.
 
-## Getting Started
+The ID has nothing to do with the cost.
+Separate the date file into the year and month.
+I need to eliminate the lat and long data because of how strongly they connect to the zipcode.
 
-Start on this project by forking and cloning [this project repository](https://github.com/learn-co-curriculum/dsc-phase-2-project) to get a local copy of the dataset.
+Summary
 
-We recommend structuring your project repository similar to the structure in [the Phase 1 Project Template](https://github.com/learn-co-curriculum/dsc-project-template). You can do this either by creating a new fork of that repository to work in or by building a new repository from scratch that mimics that structure.
-
-## Project Submission and Review
-
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
-
-## Summary
-
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+The comparison of predicted and actual data reveals that, for the majority of houses with modest prices (20% of the maximum price), the predicted price is fairly similar to the actual price. While the house price is not too high, qqplot demonstrates that the house price is accurately forecast. But, the projection is not very accurate for the high value price house. When a house's worth increases, especially when it costs more than a million dollars, there is a significant movement in the predicted price.
